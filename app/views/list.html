@@ -3,7 +3,7 @@
     <input type="text" ng-model="search.$" class="form-control">
 </div>
 <ul class="notes">
-	<li ng-repeat="note in notes | filter: search">
+	<li ng-repeat="note in notes | filter: search" ng-class="{active: note.id == currentNote.id}">
 		<a ng-click="loadNote(note)" href="">
   			<span class="title">{{ note.content | title: 25 }}</span>
   			<span class="last-modified">20:30</span>

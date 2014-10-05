@@ -9,6 +9,6 @@ angular.module('notesFilters', []).filter('title', function() {
 		}
 
 		var line = firstLine(input);
-		return line.length > length ? line.substr(0, length) + "..." : line;
+		return line.length > length ? line.substr(0, length) + '...' : line;
 	};
 });

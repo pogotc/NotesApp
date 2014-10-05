@@ -11,7 +11,12 @@ angular.module('notesApp')
   .controller('ListCtrl', function ($scope, $rootScope, NoteGateway) {
     $scope.notes = NoteGateway.getNotes();
 
+    $scope.currentNote = null;
+
     $scope.loadNote = function(note) {
     	$rootScope.$broadcast('LOAD_NOTE', note);
+    	$scope.currentNote = note;
     };
+
+    $scope.loadNote(NoteGateway.getNotes()[0]);
 });
