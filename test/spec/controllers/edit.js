@@ -40,3 +40,4 @@ describe('Controller: EditCtrl', function () {
     expect(scope.note).toBe(note);
   });  
 });
+ 

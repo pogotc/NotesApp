@@ -40,7 +40,7 @@ angular.module('notesServices', ['ngStorage']).service('NoteGateway',function($l
 
 		if (this.loadById(note.id)) {
 			$localStorage.notes = $localStorage.notes.map(function(elem) {
-				return elem.id == note.id ? note : elem;
+				return elem.id === note.id ? note : elem;
 			});
 		} else {
 			$localStorage.notes.push(note);

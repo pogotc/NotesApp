@@ -9,4 +9,4 @@
  * Main module of the application.
  */
 angular
-  .module('notesApp', ['ngStorage', 'notesServices']);
+  .module('notesApp', ['ngStorage', 'notesServices', 'notesFilters']);
