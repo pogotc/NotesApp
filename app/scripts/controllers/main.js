@@ -8,7 +8,7 @@
  * Controller of the notesApp
  */
 angular.module('notesApp')
-  .controller('MainCtrl', function ($scope, $localStorage) {
-    $scope.name = $localStorage.name;
-    $localStorage.name = 'Bobb';
-  });
+  .controller('MainCtrl', function () {
+    
+
+});
