@@ -24,4 +24,6 @@ angular.module('notesApp')
   	$scope.$watch('note', function(e, note){
   		NoteGateway.save(note);
   	}, true);
+
+    this.loadNote(NoteGateway.getNotes()[0]);
 });

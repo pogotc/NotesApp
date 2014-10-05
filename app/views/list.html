@@ -1,5 +1,7 @@
-<ul>
+<input type="search">
+<ul class="notes">
 	<li ng-repeat="note in notes" ng-click="loadNote(note)">
-  		{{ note.content | title: 20 }}
+  		<span class="title">{{ note.content | title: 25 }}</span>
+  		<span class="last-modified">20:30</span>
 	</li>
 </ul>
