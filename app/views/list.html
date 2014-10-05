@@ -1,9 +1,9 @@
 <div class="search-container col-lg-10">
     <i class="fa fa-search"></i>
-    <input type="text" class="form-control">
+    <input type="text" ng-model="search.$" class="form-control">
 </div>
 <ul class="notes">
-	<li ng-repeat="note in notes">
+	<li ng-repeat="note in notes | filter: search">
 		<a ng-click="loadNote(note)" href="">
   			<span class="title">{{ note.content | title: 25 }}</span>
   			<span class="last-modified">20:30</span>
