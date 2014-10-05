@@ -74,28 +74,63 @@ body {
   }
 }
 
+.notes-container {
+  padding-right: 0px;
+}
 
 .notes {
   margin: 0px;
   padding: 0px;
 
   li {
+    a {
+      display: block;
+      text-decoration: none;
+      color: #000;
+      padding: 4px 0px 4px 4px; 
+
+      .title {
+        display: block;
+        font-weight: bold;
+      }
+
+      .last-modified {
+        display: block;
+        font-color: #888;
+        font-size: 11px;
+      }
+    }
+
+    a:hover {
+      background: #f5f5f5;
+    }
+
     border-bottom: 1px dotted #ccc;
     list-style-type: none;
     margin: 0px;
-    padding: 4px 0px;
+    padding: 0px;
 
-    .title {
-      display: block;
-      font-weight: bold;
-    }
-
-    .last-modified {
-      display: block;
-      font-color: #888;
-      font-size: 11px;
-    }
+    
   }
+}
+
+.search-container {
+
+    position: relative;
+    padding: 10px 0px;
+    
+    input {
+      padding-left: 30px;    
+    }
+    i {
+      position: absolute;
+      padding: 10px 12px;
+      pointer-events: none;
+    }
+}
+
+.content-container {
+  padding-left: 0px;
 }
 
 .content-area {
