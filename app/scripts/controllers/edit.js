@@ -17,7 +17,7 @@ angular.module('notesApp')
   		$scope.note = note;	
   	};
 
-  	$rootScope.$on('LOAD_NOTE', function(event, data){
+  	$scope.$on('LOAD_NOTE', function(event, data){
   		that.loadNote(data);
   	});
 

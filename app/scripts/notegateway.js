@@ -2,14 +2,10 @@
 
 angular.module('notesServices', ['ngStorage']).service('NoteGateway',function($localStorage){
   
-	var notes = null;
-
-	function loadNotesFromStorage() {
-		notes = $localStorage.notes;
-		if (notes === undefined) {
-			notes = [];
-		}
-	} 
+	var notes = $localStorage.notes;
+	if (notes === undefined) {
+		notes = [];
+	}
 
 	function getNextId() {
 		if (!$localStorage.nextId) {
@@ -19,9 +15,10 @@ angular.module('notesServices', ['ngStorage']).service('NoteGateway',function($l
 	}
 
 	this.getNotes = function() {
-		if (notes === null) {
-			loadNotesFromStorage();
+		if (!$localStorage.notes) {
+			$localStorage.notes = [];
 		}
+		notes = $localStorage.notes;
 		return notes;
 	};
 
@@ -38,13 +35,10 @@ angular.module('notesServices', ['ngStorage']).service('NoteGateway',function($l
 			note.id = getNextId();
 		}
 
-		if (this.loadById(note.id)) {
-			$localStorage.notes = $localStorage.notes.map(function(elem) {
-				return elem.id === note.id ? note : elem;
-			});
-		} else {
-			$localStorage.notes.push(note);
+		if (!this.loadById(note.id)) {
+			notes.push(note);
 		}
+		$localStorage.notes = notes;
 	};
 
 	this.loadById = function(id) {

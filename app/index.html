@@ -25,6 +25,10 @@
     <div class="container">
       <div class="header">
         <h3 class="text-muted">Notes</h3>
+
+        <div ng-controller="CreateCtrl">
+          <a ng-click="createNote()" href="#">Add Note</a>
+        </div>
       </div>
 
       <div class="row">
@@ -71,6 +75,7 @@
         <script src="scripts/titlefilter.js"></script> 
         <script src="scripts/app.js"></script>
         <script src="scripts/contentarea.js"></script> 
+        <script src="scripts/controllers/create.js"></script>
         <script src="scripts/controllers/edit.js"></script>
         <script src="scripts/controllers/list.js"></script>
         <!-- endbuild -->

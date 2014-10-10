@@ -9,6 +9,16 @@ angular.module('notesFilters', []).filter('title', function() {
 		}
 
 		var line = firstLine(input);
-		return line.length > length ? line.substr(0, length) + '...' : line;
+		var div = document.createElement('div');
+		div.innerHTML = line;
+		line = div.innerText;
+		
+		var result = line.length > length ? line.substr(0, length) + '...' : line;
+
+		if (result.length === 0) {
+			return 'New Note';
+		} else {
+			return result;
+		}
 	};
 });
