@@ -30,8 +30,9 @@ describe('Service: NoteGateway', function () {
 
   it('can save notes to local storage', function(){
     var note = {content: 'my new note'};
-    NoteGateway.save(note);
+    var savedNode = NoteGateway.save(note);
     expect(NoteGateway.getNotes().length).toBe(1);
+    expect(savedNode.id).toBe(1);
   });
 
   it('can assign incrementing ids', function(){

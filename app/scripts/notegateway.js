@@ -39,6 +39,8 @@ angular.module('notesServices', ['ngStorage']).service('NoteGateway',function($l
 			notes.push(note);
 		}
 		$localStorage.notes = notes;
+
+		return note;
 	};
 
 	this.loadById = function(id) {
