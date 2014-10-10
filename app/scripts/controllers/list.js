@@ -18,5 +18,15 @@ angular.module('notesApp')
     	$scope.currentNote = note;
     };
 
-    $scope.loadNote(NoteGateway.getNotes()[0]);
+    this.openNote = function(id) {
+    	var note = NoteGateway.loadById(id);
+    	if (note) {
+    		$scope.loadNote(note);
+    	}
+    };
+
+    var that = this;
+    $scope.$on('NOTE_CREATED', function(event, data){
+  		that.openNote(data.id);
+  	});
 });

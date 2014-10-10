@@ -26,5 +26,10 @@ describe('Controller: CreateCtrl', function () {
     scope.createNote();
     expect(_NoteGateway.getNotes().length).toBe(1);
   });
+
+  it('will trigger the opening of a newly added note', function(){
+    scope.createNote();
+    
+  });
 });
  

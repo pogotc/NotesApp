@@ -8,10 +8,10 @@
  * Controller of the notesApp
  */
 angular.module('notesApp')
-  .controller('CreateCtrl', function ($scope, NoteGateway) {
+  .controller('CreateCtrl', function ($scope, $rootScope, NoteGateway) {
 
     $scope.createNote = function() {
-      NoteGateway.save({content: ''});
-      
+      var newNote = NoteGateway.save({content: ''});
+      $rootScope.$broadcast('NOTE_CREATED', newNote);
     };
 });
