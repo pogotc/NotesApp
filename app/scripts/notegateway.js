@@ -7,6 +7,8 @@ angular.module('notesServices', ['ngStorage']).service('NoteGateway',function($l
 		notes = [];
 	}
 
+	this.currentlyOpenNote = null;
+
 	function getNextId() {
 		if (!$localStorage.nextId) {
 			$localStorage.nextId = 1;

@@ -16,6 +16,7 @@ angular.module('notesApp')
     $scope.loadNote = function(note) {
     	$rootScope.$broadcast('LOAD_NOTE', note);
     	$scope.currentNote = note;
+        NoteGateway.currentlyOpenNote = note;
     };
 
     this.openNote = function(id) {
@@ -29,4 +30,8 @@ angular.module('notesApp')
     $scope.$on('NOTE_CREATED', function(event, data){
   		that.openNote(data.id);
   	});
+
+    if ($scope.notes.length > 1) {
+        this.openNote($scope.notes[0].id);
+    }
 });

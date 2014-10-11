@@ -24,4 +24,8 @@ angular.module('notesApp')
   	$scope.$watch('note', function(e, note){
   		NoteGateway.save(note);
   	}, true);
+
+    if (NoteGateway.currentlyOpenNote !== null) {
+      this.loadNote(NoteGateway.currentlyOpenNote);
+    }
 });
