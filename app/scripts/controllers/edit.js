@@ -15,8 +15,6 @@ angular.module('notesApp')
 
   	this.loadNote = function(note) {
   		$scope.note = note;
-      var elem = document.getElementById('content-area');
-      elem.focus();
   	};
 
   	$scope.$on('LOAD_NOTE', function(event, data){

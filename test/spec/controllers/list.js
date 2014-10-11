@@ -11,7 +11,7 @@ angular.module('mock.notesApp', [])
     };
     this.loadById = function() {
       return {id: 2, content: 'Hola, este es una prueba'};
-    }
+    };
   });
 
 describe('Controller: ListCtrl', function () {
